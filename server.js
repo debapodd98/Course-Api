@@ -17,6 +17,7 @@ connectDB();
 const bootcamps = require("./routes/bootcamps");
 const courses = require("./routes/courses");
 const auth = require("./routes/auth");
+const users = require("./routes/users");
 
 const app = express();
 
@@ -41,6 +42,7 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use("/api/v1/bootcamps", bootcamps, errorHandler);
 app.use("/api/v1/courses", courses, errorHandler);
 app.use("/api/v1/auth", auth, errorHandler);
+app.use("/api/v1/users", users, errorHandler);
 
 const PORT = process.env.PORT || 5000;
 
